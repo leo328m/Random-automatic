@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Randomise Х и Y (automatic)</title>
+</head>
+<body>
+<h1>Randomise Х и Y (automatic)</h1>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+   <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+
+   var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+ctx.strokeStyle = "DeepPink";
+ctx.fillStyle = "Blue";
+ctx.lineWidth = 4;
+//
+z=500;
+// 
+w1=1000;
+// 
+w2=1000;	
+//
+var circle = function (x, y, radius, fillCircle) {
+	      ctx.beginPath();
+      ctx.arc(x,y, 3, 0, Math.PI * 2, false);
+            ctx.stroke();
+};
+//
+for (i=0;i<z;i++)	{
+//
+var x=Math.floor(Math.random() * w1);
+var y=Math.floor(Math.random() * w2);
+//
+circle(x,y,3,false);
+};	
+
+// 
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	ctx.strokeStyle = "Turquoise";
+	ctx.lineWidth = 4;
+	ctx.beginPath();
+	ctx.moveTo(4, 1000);
+	ctx.lineTo(4, 4);
+	ctx.moveTo(4, 1000);
+	ctx.lineTo(1000, 1000);
+	ctx.stroke();
+
+var n = 10;
+// 
+ctx.font = "18px Arial";
+ ctx.textAlign = "left";
+ ctx.textBaseline = "bottom";
+
+//
+ for (i=1; i<(n+1); i++) {
+ // 
+ ctx.strokeStyle = "Black";
+ ctx.lineWidth = 1;
+ //
+	ctx.beginPath();
+	ctx.moveTo(4, ((1000*(n-i))/n));
+	ctx.lineTo(1000,((1000*(n-i))/n));
+	ctx.stroke();
+
+// 
+
+	ctx.beginPath();
+	ctx.moveTo(((1000*(n-i))/n),1000);
+	ctx.lineTo(((1000*(n-i))/n),1);
+	ctx.stroke();
+	
+ //
+ ctx.fillText(i,4,((1000*(n-i))/n));
+ //абсциссы
+ ctx.fillText(i,((1000*i)/n),996);	
+	
+};
+
+// 
+ctx.beginPath();
+	ctx.moveTo(1000,1000);
+	ctx.lineTo(1000,1);
+	ctx.stroke();
+
+ //
+ ctx.fillText(i,4,((1000*(n-i))/n));
+ //
+ ctx.fillText(i,((1000*i)/n),996);
+
+</script>
+</body>
+</html>
